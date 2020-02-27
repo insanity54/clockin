@@ -4,5 +4,8 @@ module.exports = {
     config.resolve.extensions.add(".web.js");
     config.resolve.extensions.add(".js");
   },
-  outputDir: './docs'
+  outputDir: './docs',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/production-sub-path/'
+    : '/'
 }
